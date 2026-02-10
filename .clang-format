@@ -1,0 +1,113 @@
+---
+# C++ Quest - clang-format Style Configuration
+# Matches the style guide in docs/style_guide.md
+
+# Base style
+BasedOnStyle: Google
+
+# Language
+Language: Cpp
+Standard: c++20
+
+# Indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+IndentCaseLabels: true
+IndentPPDirectives: AfterHash
+
+# Braces (K&R style - opening brace on same line)
+BreakBeforeBraces: Attach
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterStruct: false
+  AfterUnion: false
+  BeforeCatch: false
+  BeforeElse: false
+
+# Line length
+ColumnLimit: 100
+
+# Spacing
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceInEmptyParentheses: false
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignEscapedNewlines: Left
+AlignOperands: true
+AlignTrailingComments: true
+
+# Pointers and references
+DerivePointerAlignment: false
+PointerAlignment: Left  # int* ptr (not int *ptr)
+
+# Breaking
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+BreakStringLiterals: true
+
+# Includes
+IncludeBlocks: Regroup
+IncludeCategories:
+  # Related header (if in .cpp file)
+  - Regex:           '^".*\.h"'
+    Priority:        1
+  # C++ standard library
+  - Regex:           '^<[a-z_]+>'
+    Priority:        2
+  # Third-party libraries
+  - Regex:           '^<catch2/'
+    Priority:        3
+  # Project headers
+  - Regex:           '.*'
+    Priority:        4
+SortIncludes: true
+
+# Namespaces
+CompactNamespaces: false
+FixNamespaceComments: true
+NamespaceIndentation: None
+
+# Comments
+ReflowComments: true
+SpacesBeforeTrailingComments: 2
+
+# Other
+BinPackArguments: true
+BinPackParameters: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 4
+Cpp11BracedListStyle: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+SortUsingDeclarations: true
